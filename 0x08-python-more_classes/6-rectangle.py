@@ -6,11 +6,11 @@ class Rectangle:
 
     number_of_instances = 0
 
-    def __init__(self.width=0, height=0):
+    def __init__(self, width=0, height=0):
         """Initialize the Rectangle."""
         self.width = width
         self.height = height
-        Ractangle.number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     def __del__(self):
         """prints a string when an instance has been deleted"""
@@ -35,3 +35,7 @@ class Rectangle:
     def height(self):
         """getter for the private instance attribute height"""
         return self.__height
+
+    @height.setter
+    def height(self, value):
+        self.__height = value
