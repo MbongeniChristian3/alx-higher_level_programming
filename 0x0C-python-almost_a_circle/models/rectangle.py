@@ -29,6 +29,7 @@ class Rectangle(Base):
 
         @height.setter
         def height(self, value):
+            self.validate_interger("height", value, False)
             self.__height = value
         
         @property
@@ -38,6 +39,7 @@ class Rectangle(Base):
 
         @x.setter
         def x(self, value):
+            self.validate_integer("x", value)
             self.__x = value
 
         @property
@@ -47,6 +49,7 @@ class Rectangle(Base):
 
         @y.setter
         def y(self, value):
+            self.validate_integer("x", value)
             self.__y = value
 
         def validate_integer(self, name, value, eq=True):
@@ -57,3 +60,8 @@ class Rectangle(Base):
                 raise ValueError("{} must be >= 0".format(name))
             elif not eq and value <= 0:
                 raise ValueError("{} must be > 0".format(name))
+
+        def area(self):
+            '''computes area of this rectangle.'''
+            return self.width * self.height
+
