@@ -2,4 +2,4 @@
 -- Records are ordered by descending  score.
 SELECT `score`, `name`
 FROM `second_table`
-ORDERED BY `score` DESK;
+ORDERED BY `score` DESC;
